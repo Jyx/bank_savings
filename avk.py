@@ -1,10 +1,12 @@
+#!/usr/bin/python
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
 	start = 10000.0
 	avk = 1.05
-	avg = 0.005 # 0.5%
+	#avg = 0.005 # 0.5%
 	avg = 0.0185 # 1.85%
 	year = 30
 
