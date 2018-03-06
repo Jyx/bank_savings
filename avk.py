@@ -7,7 +7,7 @@ def main():
 	start = 60000.0
 	avk = 1.05
 	#avg = 0.005 # 0.5%
-	avg = 0.0060 # 1.85%
+	avg = 0.0170 # 1.85%
 	year = 12
 
 	perfect = []
@@ -41,9 +41,10 @@ def main():
 	plt.text(year - 1, int(nonperfect[-1]), str(int(nonperfect[-1])) + "kr")
 	plt.text(year - 1, int(diff[-1]), str(int(diff[-1])) + "kr")
         offset = year / 3
-	plt.text(1, int(perfect[-1]), "Start: " + str(start), position=(1,start))
-	plt.text(2, int(perfect[-1]), "Avkastning: " + str(avk) + "%", position=(offset, 1))
-	plt.text(3, int(perfect[-1]), "Avgift: " + str(avg*100) + "%", position=(offset*2, 1))
+	plt.text(1, int(perfect[-1]), "Start: " + str(start))
+	plt.text(offset, int(perfect[-1]), "Avkastning: " + str(avk) + "%")
+	plt.text(offset * 2, int(perfect[-1]), "Avgift: " + str(avg*100) + "%")
+	plt.text(1, start / 2, "Total avgift i procent efter " + str(year) + " ar: " + str(round(((perfect[-1] / nonperfect[-1])*100)-100, 2)) + "%", color='red')
 	plt.show()
 
 if __name__ == '__main__':
